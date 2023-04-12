@@ -72,22 +72,22 @@ jobs:
     - name: Azure Login
       uses: azure/login@v1
       with:
-        creds: ${{ secrets.AZURE_CREDENTIALS }}
+        creds: ${{ secrets.ihi8Q~lURLr1xzFbkDZyMOpkdyPaRzMbq-i0GaBH }}
            
     # Deploy Azure WebApp using Bicep file
     - name: deploy
       uses: azure/arm-deploy@v1
       with:
-        subscriptionId: ${{ env.SUBSCRIPTION-ID }}
-        resourceGroupName: ${{ env.RESOURCE-GROUP }}
+        subscriptionId: ${{ env.aa0e6dfc-c1ff-4ce1-8482-1a67035da40c }}
+        resourceGroupName: ${{ env.rg-az400-eshoponweb-rg-az400-eshoponweb-rautelsi }}
         template: bicep-template/webapp.bicep
-        parameters: 'webAppName=${{ env.WEBAPP-NAME }} location=${{ env.LOCATION }}'
+        parameters: 'webAppName=${{ env.az400-webapp-eshoponweb-rautelsi }} location=${{ env.LOCATION }}'
         failOnStdErr: false   
     
     # Publish website to Azure App Service (WebApp)
     - name: Publish Website to WebApp
       uses: Azure/webapps-deploy@v2
       with:
-        app-name: ${{ env.WEBAPP-NAME  }}
+        app-name: ${{ env.az400-webapp-eshoponweb-rautelsi  }}
         package: .net-app
    
